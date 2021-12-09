@@ -1,0 +1,127 @@
+body {
+	background: linear-gradient(to right, #373B44,#4286f4);
+	background-size: 400% 400%;
+	animation: gradient 8s ease-in-out infinite;
+	height: 100%;
+}
+
+
+.calc__container{
+    max-width: 300px;
+    height: 500px;
+    background-color: #222831;
+    margin: 50px auto ;
+    border-radius: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 18px;
+    box-shadow: 0 0 46px -10px black;
+    animation: anim 8s infinite;
+}
+p{
+    position: relative;
+    color: #4E9F3D;
+    font-size: 4rem;
+    margin: auto 0;
+    right: 1rem;
+}
+.header{
+    justify-content: end;
+    display: grid;
+    height: 125px;
+}
+.osnova__btn{
+    display: grid;
+    color: #00ADB5;
+    grid-template-areas: 
+    "ac plus__minus procent devide"                     
+    "seven eight nine product"                     
+    "four five six minus"                       
+    "one two free plus"
+    "nol nol tochka ravno";
+    grid-gap: 10px; 
+    justify-items: center;                  
+}
+
+.btn:hover{
+    font-size: 250%;
+    cursor: pointer;
+    filter: brightness(140%);
+}
+.btn:active{
+    filter: brightness(80%);
+    font-size: 150%;
+}
+.calc__container:hover{
+    animation-play-state: paused;
+}
+.btn{
+    user-select: none;
+    cursor: pointer;
+    font-size: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #393E46;
+    text-align: center;
+    line-height: 4rem;
+    border-radius: 50%;
+}
+.gray{
+    background-color: #00ADB5;
+    color: #393E46;
+}
+.ravno{
+    background-color: #4E9F3D;
+    color: #191A19;
+}
+.nol{
+    width: 100%;
+    grid-area: nol;
+    border-radius: 25px;
+}
+@keyframes gradient { 
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes anim {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(-90px);
+    }
+    75%{
+        transform: translateX(90px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@media screen and (max-width: 762px){
+    .calc__container{
+        max-width: 300px;
+        min-width: 300px;
+    }
+    
+}
+@media screen and (min-width: 762px){
+    .calc__container{
+        max-width: 400px;
+    }
+    .btn{
+        width: 4.2rem;
+        height: 4.2rem;
+    }
+    .nol{
+        width: 80%;
+    }
+    .osnova__btn{
+        column-gap: 0;
+    }
+}
